@@ -13,6 +13,13 @@ export class ChartsComponent implements OnInit {
         scaleShowVerticalLines: false,
         responsive: true
     };
+
+    public tabler = [
+        { header: 'ID', id: 1, projname: 'Project A', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018' },
+        { header: 'Project Name', id: 2, projname: 'Project B', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018' },
+        { header: 'Description', id: 3, projname: 'Project C', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018' },
+        { header: 'Date Created', id: 4, projname: 'Project D', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018' }
+    ];
     public barChartLabels: string[] = [
         '2006',
         '2007',
@@ -158,7 +165,15 @@ export class ChartsComponent implements OnInit {
          */
     }
 
-    constructor() {}
+    constructor() { }
 
-    ngOnInit() {}
+    ngOnInit() { }
+
+    // addProj(){
+    //     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    //         this.closeResult = `Closed with: ${result}`;
+    //       }, (reason) => {
+    //         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    //       });
+    // }
 }
