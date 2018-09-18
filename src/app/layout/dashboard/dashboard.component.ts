@@ -10,6 +10,17 @@ import { routerTransition } from '../../router.animations';
 export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
+    public pieChartLabels: string[] = [
+        'Download Sales',
+        'In-Store Sales',
+        'Mail Sales'
+    ];
+    public pieChartData: number[] = [300, 500, 100];
+    public pieChartType: any = 'pie';
+
+    public chartHovered(e: any): void {
+        // console.log(e);
+    }
 
     constructor() {
         this.sliders.push(

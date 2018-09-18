@@ -15,10 +15,11 @@ export class ChartsComponent implements OnInit {
     };
 
     public tabler = [
-        { header: 'ID', id: 1, projname: 'Project A', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018' },
-        { header: 'Project Name', id: 2, projname: 'Project B', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018' },
-        { header: 'Description', id: 3, projname: 'Project C', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018' },
-        { header: 'Date Created', id: 4, projname: 'Project D', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018' }
+        { header: 'ID', id: 1, projname: 'Project A', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018', edit: 'Edit' },
+        { header: 'Project Name', id: 2, projname: 'Project B', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018', edit: 'Edit' },
+        { header: 'Description', id: 3, projname: 'Project C', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018', edit: 'Edit' },
+        { header: 'Date Created', id: 4, projname: 'Project D', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018', edit: 'Edit' },
+        { header: 'Action', id: 4, projname: 'Project E', desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit', datecreated: '09/14/2018', edit: 'Edit' }
     ];
     public barChartLabels: string[] = [
         '2006',
@@ -29,8 +30,8 @@ export class ChartsComponent implements OnInit {
         '2011',
         '2012'
     ];
-    public barChartType: string = 'bar';
-    public barChartLegend: boolean = true;
+    public barChartType: any = 'bar';
+    public barChartLegend: any = true;
 
     public barChartData: any[] = [
         { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
@@ -44,7 +45,7 @@ export class ChartsComponent implements OnInit {
         'Mail-Order Sales'
     ];
     public doughnutChartData: number[] = [350, 450, 100];
-    public doughnutChartType: string = 'doughnut';
+    public doughnutChartType: any = 'doughnut';
 
     // Radar
     public radarChartLabels: string[] = [
@@ -60,7 +61,7 @@ export class ChartsComponent implements OnInit {
         { data: [65, 59, 90, 81, 56, 55, 40], label: 'Series A' },
         { data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B' }
     ];
-    public radarChartType: string = 'radar';
+    public radarChartType: any = 'radar';
 
     // Pie
     public pieChartLabels: string[] = [
@@ -69,7 +70,7 @@ export class ChartsComponent implements OnInit {
         'Mail Sales'
     ];
     public pieChartData: number[] = [300, 500, 100];
-    public pieChartType: string = 'pie';
+    public pieChartType: any = 'pie';
 
     // PolarArea
     public polarAreaChartLabels: string[] = [
@@ -80,9 +81,9 @@ export class ChartsComponent implements OnInit {
         'Corporate Sales'
     ];
     public polarAreaChartData: number[] = [300, 500, 100, 40, 120];
-    public polarAreaLegend: boolean = true;
+    public polarAreaLegend: any = true;
 
-    public polarAreaChartType: string = 'polarArea';
+    public polarAreaChartType: any = 'polarArea';
 
     // lineChart
     public lineChartData: Array<any> = [
@@ -131,9 +132,11 @@ export class ChartsComponent implements OnInit {
             pointHoverBorderColor: 'rgba(148,159,177,0.8)'
         }
     ];
-    public lineChartLegend: boolean = true;
-    public lineChartType: string = 'line';
+    public lineChartLegend: any = true;
+    public lineChartType: any = 'line';
 
+    // myVARS
+    display = 'none';
     // events
     public chartClicked(e: any): void {
         // console.log(e);
@@ -169,11 +172,15 @@ export class ChartsComponent implements OnInit {
 
     ngOnInit() { }
 
-    // addProj(){
-    //     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-    //         this.closeResult = `Closed with: ${result}`;
-    //       }, (reason) => {
-    //         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    //       });
-    // }
+    addProj() {
+        this.display = 'block';
+    }
+
+    onCloseHandled() {
+        this.display = 'none';
+    }
+
+    saveProj(projectData) {
+        console.log('data', projectData);
+    }
 }
