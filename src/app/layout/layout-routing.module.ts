@@ -11,7 +11,7 @@ const routes: Routes = [
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'projects', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'bdoc', loadChildren: './tables/tables.module#TablesModule' },
-            { path: 'phasing', loadChildren: './form/form.module#FormModule' },
+            { path: 'phasing', loadChildren: './phasing/phasing.module#PhasingModule' },
             { path: 'sysb', loadChildren: './bs-element/bs-element.module#BsElementModule' },
             { path: 'cmodel', loadChildren: './grid/grid.module#GridModule' },
             { path: 'reports', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
